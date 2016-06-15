@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task List</title>
+    <link rel="stylesheet" type="text/css" href="css/tasks.css">
+    <script src="lib/require.js" data-main="jsdist/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Task List</h1>
+    </header>
+
+    <div class="toolbar">
+        <button id="new-task-button" data-bind="click: addTask">New Task</button>
+        <button id="delete-all-button" data-bind="click: deleteAllTask">Delete All</button>
+    </div>
+
+    <div id="content">
+        <ul id="task-list" data-bind="foreach: tasks">
+            <li class="task">
+                <input class="complete" type="checkbox" data-bind="checked: checked" />
+                <input class="description" type="text" placeholder="Enter task description..." data-bind="value: description" />
+                <button class="delete-button" data-bind="click: $root.removeTask">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="toolbar">
+        <button id="save-button" data-bind="click: saveTaskStore">Save</button>
+        <button id="clear-button" data-bind="click: clearTaskStore">Clear</button>
+        <button id="reload-button" data-bind="click: loadTaskStore">Reload</button>
+    </div>
+
+    <ul id="log-list" data-bind="foreach: logs">
+        <li class="log">
+            <label data-bind="text: text"></label>
+        </li>
+    </ul>
+
+</body>
+
+</html>

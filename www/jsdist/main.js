@@ -1,0 +1,1 @@
+require.config({paths:{knockout:"../lib/knockout-latest.debug"}}),require(["app"],function(i){i.init()});
